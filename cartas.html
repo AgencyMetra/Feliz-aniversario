@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080509">
+  <meta name="description" content="Cartas escritas com o coração, uma para cada momento.">
+  <title>Cartas ♡ Para Ela</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080509'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23E83E8C'%3E%E2%99%A1%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-cartas">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <div class="bg-fx" aria-hidden="true">
+    <canvas id="fx-canvas"></canvas>
+    <span class="mist mist-1"></span>
+    <span class="mist mist-2"></span>
+    <span class="mist mist-3"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <button class="brand-heart" id="brandHeart" type="button" aria-label="Coração do logo">♡</button>
+        <a class="brand-name" href="index.html">Para Ela</a>
+      </div>
+      <nav class="site-nav" id="siteNav" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cartas.html" aria-current="page">Cartas</a></li>
+          <li><a href="universo.html">Nosso Universo</a></li>
+          <li><a href="jogo.html">Reino Encantado</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="music-btn" id="musicBtn" type="button" aria-label="Tocar música" aria-pressed="false">♫</button>
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="siteNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main" id="conteudo">
+    <section class="letters-hero" aria-labelledby="lettersTitle">
+      <h1 class="reveal" id="lettersTitle">Cartas escritas com o coração</h1>
+      <p class="reveal" style="--d:.15s">Cada envelope guarda um pedaço do que eu sinto por você. Abra com calma, na ordem que quiser.</p>
+      <p class="letters-hint reveal" style="--d:.3s">Toque em um envelope ♡</p>
+    </section>
+
+    <ul class="letters-grid" id="lettersGrid" aria-label="Lista de cartas">
+      <li><noscript>Ative o JavaScript para abrir as cartas.</noscript></li>
+    </ul>
+  </main>
+
+  <!-- Modal da carta -->
+  <div class="letter-modal" id="letterModal" role="dialog" aria-modal="true" aria-labelledby="letterTitle2" aria-hidden="true">
+    <div class="letter-backdrop"></div>
+    <canvas class="letter-particles" id="letterParticles" aria-hidden="true"></canvas>
+    <button class="letter-close" id="letterClose" type="button" aria-label="Fechar carta">×</button>
+
+    <div class="letter-stage" id="letterStage">
+      <div class="env-stage" id="envStage" aria-hidden="true">
+        <span class="env-body">
+          <span class="env-paper"></span>
+          <span class="env-front"></span>
+          <span class="env-flap"></span>
+          <span class="env-seal">♡</span>
+        </span>
+      </div>
+
+      <article class="letter-paper" id="letterPaper" tabindex="-1">
+        <div class="letter-num" id="letterNum"></div>
+        <h2 class="letter-title" id="letterTitle2"></h2>
+        <div class="letter-body" id="letterBody"></div>
+        <p class="letter-sign" id="letterSign"></p>
+        <div class="letter-nav">
+          <button type="button" id="letterPrev">← Anterior</button>
+          <button type="button" id="letterNext">Próxima →</button>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <span class="footer-heart" aria-hidden="true">♡</span>
+    <p>Cada palavra aqui foi escrita pensando em você.</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="universo.html">Nosso Universo</a></li>
+      <li><a href="jogo.html">Reino Encantado</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/cartas.js"></script>
+</body>
+</html>

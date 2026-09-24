@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080509">
+  <meta name="description" content="Reino Encantado: um pequeno jogo de unicórnios, magia e corações.">
+  <title>Reino Encantado ♡ Para Ela</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080509'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23E83E8C'%3E%E2%99%A1%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-jogo">
+  <a class="skip-link" href="#conteudo">Ir para o jogo</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <button class="brand-heart" id="brandHeart" type="button" aria-label="Coração do logo">♡</button>
+        <a class="brand-name" href="index.html">Para Ela</a>
+      </div>
+      <nav class="site-nav" id="siteNav" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cartas.html">Cartas</a></li>
+          <li><a href="universo.html">Nosso Universo</a></li>
+          <li><a href="jogo.html" aria-current="page">Reino Encantado</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="music-btn" id="musicBtn" type="button" aria-label="Tocar música" aria-pressed="false">♫</button>
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="siteNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="game-main" id="conteudo">
+    <div class="game-wrap" id="gameWrap">
+      <canvas id="gameCanvas" tabindex="0" role="img"
+              aria-label="Reino Encantado: um unicórnio percorre um reino de fantasia coletando corações mágicos."></canvas>
+      <canvas id="gameFx" aria-hidden="true"></canvas>
+
+      <div class="game-hud is-hidden" id="gameHud">
+        <span class="hud-count" id="hudCount">0 / 10</span>
+        <span class="hud-pips" id="hudPips" aria-hidden="true"></span>
+      </div>
+      <p class="sr-only" id="gameStatus" role="status" aria-live="polite"></p>
+
+      <!-- Joystick virtual (aparece só em telas de toque) -->
+      <div class="joystick" id="joystick" aria-label="Joystick: arraste para mover o unicórnio" role="application">
+        <div class="joystick-knob" id="joystickKnob"></div>
+      </div>
+
+      <!-- Tela inicial -->
+      <div class="game-overlay" id="startOverlay">
+        <div class="overlay-card">
+          <span class="moon-mini" aria-hidden="true"></span>
+          <h1>Reino Encantado</h1>
+          <p class="story">Nas noites de lua cheia, o reino inteiro guarda corações mágicos escondidos. Só quem ama de verdade consegue encontrá-los.</p>
+          <p class="how">
+            <span class="desk">Use <strong>W A S D</strong> ou as <strong>setas</strong> para andar.</span>
+            <span class="touch">Arraste o <strong>joystick</strong> para andar.</span>
+            <br>Colete todos os corações.
+          </p>
+          <button class="btn btn-primary" id="startBtn" type="button">Começar ✦</button>
+        </div>
+      </div>
+
+      <!-- Tela final -->
+      <div class="game-overlay is-hidden" id="winOverlay" aria-hidden="true">
+        <canvas class="win-fx" id="winFx" aria-hidden="true"></canvas>
+        <div class="overlay-card">
+          <p class="win-line win-line-1" id="winLine1">Você encontrou todos os corações.</p>
+          <p class="win-line win-line-2" id="winLine2">Mas o coração mais importante sempre foi o meu.</p>
+          <p class="win-line win-line-3" id="winLine3">♡ Feliz aniversário, meu amor ♡</p>
+          <div class="win-actions" id="winActions">
+            <a class="btn btn-primary" href="index.html">Voltar ao início</a>
+            <button class="btn btn-ghost" id="againBtn" type="button">Jogar de novo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/jogo.js"></script>
+</body>
+</html>

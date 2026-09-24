@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080509">
+  <meta name="description" content="Um pequeno universo feito de cartas, estrelas e memórias, só para você.">
+  <title>Para Ela ♡ Feliz aniversário</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080509'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23E83E8C'%3E%E2%99%A1%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-home">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- Fundo vivo: estrelas, névoa e corações distantes -->
+  <div class="bg-fx" aria-hidden="true">
+    <canvas id="fx-canvas"></canvas>
+    <span class="mist mist-1"></span>
+    <span class="mist mist-2"></span>
+    <span class="mist mist-3"></span>
+  </div>
+
+  <!-- Abertura: tela escura + frases (o main.js monta as palavras) -->
+  <div class="intro" id="intro" aria-label="Abertura. Toque para pular.">
+    <canvas aria-hidden="true"></canvas>
+    <div class="intro-stack">
+      <p class="intro-line intro-line-1">Para a garota que transformou meu mundo...</p>
+      <p class="intro-line intro-line-2"></p>
+    </div>
+    <span class="intro-skip" aria-hidden="true">toque para continuar</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <button class="brand-heart" id="brandHeart" type="button" aria-label="Coração do logo">♡</button>
+        <a class="brand-name" href="index.html">Para Ela</a>
+      </div>
+      <nav class="site-nav" id="siteNav" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="cartas.html">Cartas</a></li>
+          <li><a href="universo.html">Nosso Universo</a></li>
+          <li><a href="jogo.html">Reino Encantado</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="music-btn" id="musicBtn" type="button" aria-label="Tocar música" aria-pressed="false">♫</button>
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="siteNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio" aria-label="Feliz aniversário">
+      <div class="hero-moon" data-parallax="-0.06" aria-hidden="true"><span class="moon"></span></div>
+
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title hero-anim" id="heroTitle" style="--d:.1s">Feliz aniversário, meu amor.</h1>
+          <p class="hero-sub hero-anim" id="heroSub" style="--d:.5s">
+            Hoje o mundo comemora o dia em que você chegou a ele.
+            Eu comemoro a sorte de ter você no meu.
+          </p>
+          <div class="hero-actions hero-anim" style="--d:.9s">
+            <a class="btn btn-primary" href="cartas.html">Abrir minhas cartas ✉</a>
+            <a class="btn btn-ghost" href="universo.html">Entrar no nosso universo ✦</a>
+          </div>
+        </div>
+
+        <div class="hero-portrait">
+          <div class="portrait-wrap hero-anim" style="--d:.3s">
+            <div class="portrait" id="portrait">
+              <div class="portrait-aura" aria-hidden="true"></div>
+              <div class="portrait-tilt">
+                <div class="portrait-frame">
+                  <div class="portrait-photo">
+                    <img src="assets/ela.jpg" width="1536" height="864" alt="Retrato dela: cabelo violeta cacheado, óculos e um olhar que ilumina tudo ao redor" decoding="async">
+                  </div>
+                </div>
+                <span class="portrait-crown" aria-hidden="true"></span>
+              </div>
+              <canvas class="portrait-canvas" aria-hidden="true"></canvas>
+              <span class="portrait-spark" style="left:-6%;top:22%;--s:1.1rem;--d:.2s" aria-hidden="true">✦</span>
+              <span class="portrait-spark" style="right:-8%;top:46%;--s:.9rem;--d:1.1s" aria-hidden="true">✧</span>
+              <span class="portrait-spark" style="left:4%;bottom:6%;--s:.8rem;--d:2s" aria-hidden="true">✦</span>
+              <span class="portrait-spark" style="right:2%;top:2%;--s:1rem;--d:2.7s" aria-hidden="true">♡</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#por-que-voce" aria-label="Rolar para baixo">⌄</a>
+    </section>
+
+    <!-- ============ POR QUE VOCÊ? ============ -->
+    <section class="section" id="por-que-voce" aria-labelledby="whyTitle">
+      <h2 class="section-title reveal" id="whyTitle">Por que você?</h2>
+      <p class="section-lead reveal" style="--d:.15s">Porque existem mil respostas, e todas elas terminam no seu nome.</p>
+
+      <ul class="why-list">
+        <li class="why-item reveal">
+          <h3 class="why-title"><span class="why-glyph" aria-hidden="true">✦</span>Seu jeito</h3>
+          <p class="why-text">Você é inteira, sem versão editada. Tem uma beleza que não pede licença e uma personalidade que faz qualquer lugar parecer um pouco mais seu.</p>
+        </li>
+        <li class="why-item reveal">
+          <h3 class="why-title"><span class="why-glyph" aria-hidden="true">✦</span>Sua luz</h3>
+          <p class="why-text">Mesmo nos dias cinzentos, você tem um brilho que eu reconheceria no escuro. Perto de você, o mundo fica menos pesado e muito mais bonito.</p>
+        </li>
+        <li class="why-item reveal">
+          <h3 class="why-title"><span class="why-glyph" aria-hidden="true">✦</span>Seu coração</h3>
+          <p class="why-text">Por trás de toda a força e de todo o estilo, existe alguém que cuida, que sente fundo e que ama de verdade. É isso que me desarma todas as vezes.</p>
+        </li>
+        <li class="why-item reveal">
+          <h3 class="why-title"><span class="why-glyph" aria-hidden="true">✦</span>Nós dois</h3>
+          <p class="why-text">Com você, eu não preciso ser outra pessoa. A gente se encaixa nos silêncios, nas risadas e até nas bagunças. Você virou o meu lar.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ MEMÓRIAS ============ -->
+    <section class="section" id="memorias" aria-labelledby="memTitle">
+      <h2 class="section-title reveal" id="memTitle">Pequenas memórias que guardo comigo</h2>
+      <p class="section-lead reveal" style="--d:.15s">Cada uma delas é um pedacinho de tempo que eu não trocaria por nada.</p>
+
+      <!-- Edite os títulos e textos dos cartões à vontade -->
+      <div class="memory-grid">
+        <article class="glass-card memory-card reveal">
+          <span class="memory-num" aria-hidden="true">01</span>
+          <h3>O dia em que tudo mudou de cor</h3>
+          <p>Eu ainda não sabia, mas ali o meu mundo começou a ficar mais bonito. Lembro de cada detalhe como se tivesse sido ontem.</p>
+        </article>
+        <article class="glass-card memory-card reveal" style="--d:.12s">
+          <span class="memory-num" aria-hidden="true">02</span>
+          <h3>Nossas risadas sem motivo</h3>
+          <p>Aquelas que começam por nada e terminam com a gente sem ar. Se eu pudesse guardar um som para sempre, seria esse.</p>
+        </article>
+        <article class="glass-card memory-card reveal">
+          <span class="memory-num" aria-hidden="true">03</span>
+          <h3>Os silêncios que dizem tudo</h3>
+          <p>Ficar ao seu lado, sem precisar falar nada, é uma das melhores sensações que eu conheço. É paz, e é casa.</p>
+        </article>
+        <article class="glass-card memory-card reveal" style="--d:.12s">
+          <span class="memory-num" aria-hidden="true">04</span>
+          <h3>Todas as vezes que você me escolheu</h3>
+          <p>Nos dias fáceis e nos difíceis. Cada escolha sua me lembrou por que eu também escolho você, todos os dias, sem pensar duas vezes.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FRASE CENTRAL ============ -->
+    <section class="cosmos-quote" aria-label="Uma promessa">
+      <canvas class="section-canvas" aria-hidden="true"></canvas>
+      <blockquote class="quote" data-reveal>
+        <p class="quote-line" data-split>Se eu pudesse escolher qualquer lugar em todos os universos,</p>
+        <p class="quote-line" data-split>eu escolheria o lugar onde você está.</p>
+      </blockquote>
+    </section>
+
+    <!-- ============ CONTADOR ============ -->
+    <section class="section" id="tempo" aria-labelledby="timeTitle">
+      <h2 class="section-title reveal" id="timeTitle">O tempo que a gente já viveu juntos</h2>
+      <p class="section-lead reveal" style="--d:.15s">E o melhor: é só o começo.</p>
+
+      <div class="count-grid" id="countdown" role="timer" aria-label="Tempo juntos">
+        <div class="count-box reveal">
+          <span class="count-num" data-unit="days">0</span>
+          <span class="count-label">dias</span>
+        </div>
+        <div class="count-box reveal" style="--d:.1s">
+          <span class="count-num" data-unit="hours">00</span>
+          <span class="count-label">horas</span>
+        </div>
+        <div class="count-box reveal" style="--d:.2s">
+          <span class="count-num" data-unit="minutes">00</span>
+          <span class="count-label">minutos</span>
+        </div>
+        <div class="count-box reveal" style="--d:.3s">
+          <span class="count-num" data-unit="seconds">00</span>
+          <span class="count-label">segundos</span>
+        </div>
+      </div>
+      <p class="count-note reveal" id="countNote">…e eu voltaria a escolher cada um deles.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-heart" aria-hidden="true">♡</span>
+    <p>Feito com todo o meu amor, só para você.</p>
+    <ul class="footer-links">
+      <li><a href="cartas.html">Cartas</a></li>
+      <li><a href="universo.html">Nosso Universo</a></li>
+      <li><a href="jogo.html">Reino Encantado</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
